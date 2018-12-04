@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+
+    "name":"Protein tracker",
+    "description": "My Second Chrome Extension",
+    "version": "1.0",
+
+    "browser_action" :{
+        "default_icon":"icon.png",
+        "default_popup":"popup.html"
+    },
+    "chrome_url_overrides" : {
+        "newtab": "index.html"
+    },
+
+    "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
+
+    "permissions": [
+        "storage",
+        "notifications",
+        "contextMenus"
+    ]
+}

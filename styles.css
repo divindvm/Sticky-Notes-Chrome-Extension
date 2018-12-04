@@ -1,0 +1,208 @@
+
+html, body{
+  overflow: hidden;
+  height: 100%;
+}
+
+
+/* 
+#drag-1, #drag-2 {
+    width: 25%;
+    height: 100%;
+    min-height: 6.5em;
+    margin: 10%;
+    background-color: #29e;
+    color: white;
+    border-radius: 0.75em;
+    padding: 4%;
+    user-select: none;
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  
+
+  #outer-dropzone {
+    height: 140px;
+  
+    touch-action: none;
+  }
+  
+  #inner-dropzone {
+    height: 80px;
+  }
+  
+  .dropzone {
+    background-color: #ccc;
+    border: dashed 4px transparent;
+    border-radius: 4px;
+    margin: 10px auto 30px;
+    padding: 10px;
+    width: 80%;
+    transition: background-color 0.3s;
+  }
+  
+  .drop-active {
+    border-color: #aaa;
+  }
+  
+  .drop-target {
+    background-color: #29e;
+    border-color: #fff;
+    border-style: solid;
+  }
+  
+  .drag-drop {
+    display: inline-block;
+    min-width: 40px;
+    padding: 2em 0.5em;
+  
+    color: #fff;
+    background-color: #29e;
+    border: solid 2px #fff;
+  
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  
+    transition: background-color 0.3s;
+  }
+  
+  .drag-drop.can-drop {
+    color: #000;
+    background-color: #4e4;
+  }
+   */
+  
+
+
+  
+
+.resize-drag {
+    background-color: #ff8e8e;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 30px 20px;
+    touch-action: none;
+    padding: 3px;
+    display: inline-flex;
+    width: 200px;
+    height: 250px;
+    flex-direction: column;
+    /* overflow-y: auto; */
+    /* This makes things *much* easier */
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 13px -1px rgba(0,0,0,0.17);
+  }
+  
+  .resize-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+textarea
+{
+  border:1px solid #999999;
+  width:100%;
+  height:100%; 
+  box-sizing: border-box;         /* For IE and modern versions of Chrome */
+  -moz-box-sizing: border-box;    /* For Firefox                          */
+  -webkit-box-sizing: border-box;
+  padding:10px;
+  resize: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+textarea:hover{
+  overflow: auto;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #6d6d6d; 
+}
+
+
+#create_button{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.delete_button{
+  background-image: url("trashclosed.png");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+  margin-left: 5px;
+}
+
+.delete_button:hover{
+  background-image: url("trashopen.png");
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  opacity: 1;
+  margin-left: 5px;
+
+}
+.change_button{
+  background-image: url("picker.png");
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+}
+
+.change_button:hover{
+  background-image: url("pickerhover.png");
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  opacity: 1;
+}
+.color-btn-wrap, .delete-btn-wrap{
+  width: fit-content;
+  margin-left: auto;
+  display: inline-block;
+  float: right;
+  padding: 5px;
+}
+
+*:focus {
+  outline: none;
+}
