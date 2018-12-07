@@ -2,6 +2,7 @@
 html, body{
   overflow: hidden;
   height: 100%;
+  padding: 10px;
 }
 
 
@@ -142,13 +143,7 @@ textarea:hover{
 }
 
 
-#create_button{
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  padding: 20px;
-  border-radius: 50px;
-}
+
 
 .delete_button{
   background-image: url("trashclosed.png");
@@ -160,6 +155,32 @@ textarea:hover{
   border: none;
   opacity: 0.5;
   margin-left: 5px;
+}
+
+.searchbar{
+  background-image: url(google-search.png);
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  cursor: pointer;
+}
+.searchbar:hover{
+  opacity: 0.8;
+}
+.search-input{
+  padding: 5px 10px;
+  border: 1px solid #e7e5e5;
+  width: 250px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }
 
 .delete_button:hover{
@@ -205,4 +226,62 @@ textarea:hover{
 
 *:focus {
   outline: none;
+}
+
+
+
+.links-wrap{
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+}
+
+form{
+  width: fit-content;
+  float: right;
+  padding: 20px 40px;
+}
+
+.action-buttons-wrap{
+  display: -webkit-inline-box;
+  padding: 10px 0px;
+}
+
+#create_button{
+  background-image: url(add-note.png);
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+}
+#color-picker{
+  background-image: url(background-change.png) !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent !important;
+  border: none;
+  /* margin-left: 5px; */
+  cursor: pointer;
+  display: -webkit-box;
+}
+
+#color-picker:hover{
+  -webkit-box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  -moz-box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  opacity: 0.8;
+}
+#create_button:hover{
+  -webkit-box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  -moz-box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  box-shadow: 5px 5px 33px 0px rgba(0,0,0,0.19);
+  opacity: 0.8;
 }

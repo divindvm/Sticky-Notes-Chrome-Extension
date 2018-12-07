@@ -196,7 +196,11 @@ interact('.resize-drag')
 
 
 window.onload = function() {
-    console.log("items fetched from thge local Storage are : ",  JSON.stringify(localStorage.getItem('itemsArray')));
+    // console.log("items fetched from thge local Storage are : ",  JSON.stringify(localStorage.getItem('itemsArray')));
+    var backgroundColor = localStorage.getItem("backgroundColor");
+    console.log("background : ", localStorage.getItem("backgroundColor"));
+    document.getElementsByTagName('body')[0].style.backgroundColor = backgroundColor ? backgroundColor : "#ffffff";
+    
 
     var createButton = document.getElementById('create_button');
     createButton.addEventListener('click', function() { addItems(); });
@@ -208,7 +212,7 @@ window.onload = function() {
     //   }
       
       notes = JSON.parse(localStorage.getItem('itemsArray')) || [];
-      console.log("Notes on load : ", JSON.stringify(notes));
+      // console.log("Notes on load : ", JSON.stringify(notes));
   
       var changeButton, deleteButton, pinButton, textArea;
       var wrapper = $('#resize-container'), container;
@@ -249,10 +253,12 @@ window.onload = function() {
           // target.style.transform = 'translate('+x+'px'+','+y+'px)';
 
           //Delete Button Initialize
+         
 
           container.append('<div class="delete-btn-wrap">' + '<button class="change_button"'+ 'id="'+'edit'+key+'"></button>' + '<button class="delete_button"'+ 'id="'+'delete'+key+'"></button>'  +'</div>');
           changeButton = document.getElementById('delete'+key);
           changeButton.addEventListener('click', function() { onClickDelete(this); });
+
 
 
           //Change Color Button Initialize
@@ -268,14 +274,20 @@ window.onload = function() {
 
           container.append('<textarea id="text' +key+ '" >'+notes[key].text+'</textarea>');
           textArea = document.getElementById('text'+key);
-          console.log("Text Area", textArea )
+          // console.log("Text Area", textArea )
           textArea.addEventListener('blur', function() { saveText(this); });
 
       }
 
 };
 
+function setTextColor(picker) {
 
+  // console.log("Color picked is :",picker);
+  document.getElementsByTagName('body')[0].style.backgroundColor = '#' + picker.toString()
+  localStorage.setItem("backgroundColor",'#' + picker.toString());
+  // target.style.backgroundColor = '#' + picker.toString()
+}
 
 
 
@@ -289,9 +301,9 @@ function saveText(item){
     // notes[item.id.slice(4)].productName = 
 }
 
-function changeColor(element){
-  console.log("Change Color function Called with index : ", element.id);
-}
+// function changeColor(element){
+//   document.getElementsByTagName('body')[0].style.backgroundColor = '#' + picker.toString()
+// }
 
 
 function onClickDelete(id){
@@ -396,5 +408,10 @@ function changeColor(item){
   }
 
   localStorage.setItem('itemsArray', JSON.stringify(notes));
+  
+}
+
+
+function addlinks(link){
   
 }

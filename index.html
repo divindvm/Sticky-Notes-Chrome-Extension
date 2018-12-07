@@ -32,20 +32,32 @@
         </div>
 
      -->
+     <div class="links-wrap">
+            <div class="action-buttons-wrap">
+                    <button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}" id="color-picker"></button>
+                    <button id="create_button"></button> 
+            </div>
+            <form action="http://www.google.com/search" method="GET">
+                <input type="text" name="q" placeholder="search" class="search-input">
+                <input type="submit" value="" class="searchbar">
+            </form>
+     </div>
 
       <div id="resize-container" class="resize-container">
       </div>
       
-
-      <button id="create_button">Add</button> 
+     
       
       <div id="wrapper">
 
       </div>
 
-      
+
+
+    <script src="jscolor.js"></script>
     <script src="jquery.js"></script>
     <script src="interact.min.js"></script>
     <script src="drag.js"></script>
+    
 </body>
 </html>
