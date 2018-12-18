@@ -2,6 +2,31 @@
 
 var notes;
 
+
+
+
+$(function(){
+  $("body").css('opacity','1');
+});
+
+
+function fade() {
+  var i = 0;
+  var h1 = document.getElementsByTagName("h1")[0];
+  h1.style.opacity = 0;
+  var k = window.setInterval(function() {
+    if (i >= 10) {
+      clearInterval(k);
+    } else {
+      h1.style.opacity = i / 10;
+      i++;
+    }
+  }, 100);
+};
+
+
+
+
 // target elements with the "draggable" class
 interact('.draggable')
   .draggable({
@@ -48,8 +73,6 @@ interact('.draggable')
 
   // this is used later in the resizing and gesture demos
   window.dragMoveListener = dragMoveListener;
-
-
 
 
   
@@ -244,6 +267,7 @@ window.onload = function() {
             case 2 : target.style.backgroundColor = "#83ff7c";break;
             case 3 : target.style.backgroundColor = "#7cebff";break;
             case 4 : target.style.backgroundColor = "#ff8e8e";break;
+            case 5 : target.style.backgroundColor = "#ffffff";break;
             default: target.style.backgroundColor = "#70b2ff";break;
           }
 
@@ -282,8 +306,8 @@ window.onload = function() {
 };
 
 function setTextColor(picker) {
-
   // console.log("Color picked is :",picker);
+  // console.log("Color is : ",picker);
   document.getElementsByTagName('body')[0].style.backgroundColor = '#' + picker.toString()
   localStorage.setItem("backgroundColor",'#' + picker.toString());
   // target.style.backgroundColor = '#' + picker.toString()
@@ -388,7 +412,7 @@ function changeColor(item){
   var color,index, target;
   index = parseInt(item.id.slice(4));
   
-  if(parseInt(notes[index].color) < 4){
+  if(parseInt(notes[index].color) < 5){
     notes[index].color = parseInt(notes[index].color)+1;
   }
   else{
@@ -404,6 +428,7 @@ function changeColor(item){
     case 2 : target.style.backgroundColor = "#83ff7c";break;
     case 3 : target.style.backgroundColor = "#7cebff";break;
     case 4 : target.style.backgroundColor = "#ff8e8e";break;
+    case 5 : target.style.backgroundColor = "#ffffff";break;
     default: target.style.backgroundColor = "#70b2ff";break;
   }
 

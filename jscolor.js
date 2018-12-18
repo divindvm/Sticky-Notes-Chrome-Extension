@@ -682,7 +682,10 @@ var jsc = {
 		if (thisObj.onFineChange) {
 			var callback;
 			if (typeof thisObj.onFineChange === 'string') {
+				console.log("thisObj : ", thisObj);
 				callback = new Function (thisObj.onFineChange);
+			
+				
 			} else {
 				callback = thisObj.onFineChange;
 			}

@@ -1,23 +1,21 @@
 {
     "manifest_version": 2,
 
-    "name":"Protein tracker",
-    "description": "My Second Chrome Extension",
+    "name":"Sticky Notes",
+    "description": "Sticky Notes for your Chrome. Organize all of the work you do at home, at school or at the office with sticky notes and flags that can help ensure you stay on top of projects and get things done.",
     "version": "1.0",
 
     "browser_action" :{
-        "default_icon":"icon.png",
-        "default_popup":"popup.html"
+        "default_icon":"icon.png"
     },
     "chrome_url_overrides" : {
         "newtab": "index.html"
     },
 
-    "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
 
     "permissions": [
         "storage",
-        "notifications",
         "contextMenus"
     ]
 }
